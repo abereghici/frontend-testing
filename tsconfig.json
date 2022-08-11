@@ -1,6 +1,10 @@
 {
+  "include": ["**/*.ts", "**/*.tsx"],
   "compilerOptions": {
+    "jsx": "react-jsx",
+    "skipLibCheck": true,
     "noEmit": true,
-    "baseUrl": "./src"
+    "baseUrl": "./",
+    "plugins": [{"name": "typescript-plugin-css-modules"}]
   }
 }
