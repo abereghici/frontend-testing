@@ -1,0 +1,26 @@
+{
+  "name": "frontend-testing",
+  "version": "1.0.0",
+  "description": "Messing around with frontend testing tools",
+  "keywords": [],
+  "homepage": "https://github.com/abereghici/frontend-testing#readme",
+  "bugs": {
+    "url": "https://github.com/abereghici/frontend-testing/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abereghici/frontend-testing.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "main": "index.js",
+  "scripts": {
+    "prettier": "prettier --ignore-path .gitignore \"**/*.+(js|jsx|json|yml|yaml|css|less|scss|ts|tsx|md|gql|graphql|mdx|vue)\"",
+    "format": "npm run prettier -- --write",
+    "check-format": "npm run prettier -- --list-different"
+  },
+  "devDependencies": {
+    "prettier": "^2.7.1",
+    "typescript": "^4.7.4"
+  }
+}
