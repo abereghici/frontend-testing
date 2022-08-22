@@ -17,7 +17,7 @@
   "scripts": {
     "dev": "node scripts/serve.mjs",
     "build": "NODE_ENV=production && node scripts/build.mjs",
-    "lint": "eslint --ignore-path .gitignore --ext .js,.jsx,.ts,.tsx .",
+    "lint": "eslint --ignore-path .gitignore --ext .js,.jsx,.ts,.tsx,.mjs .",
     "check-types": "tsc",
     "prettier": "prettier --ignore-path .gitignore \"**/*.+(js|jsx|json|yml|yaml|css|less|scss|ts|tsx|md|gql|graphql|mdx|vue)\"",
     "check-format": "npm run prettier -- --list-different",

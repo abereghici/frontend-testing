@@ -1,6 +1,10 @@
 import {build} from 'esbuild';
-import pkg from '../package.json' assert {type: 'json'};
 import {common} from './common.mjs';
+
+// https://github.com/eslint/eslint/discussions/15305
+// import pkg from '../package.json' assert {type: 'json'};
+import {readFileSync} from 'fs';
+const pkg = JSON.parse(readFileSync('./package.json'));
 
 build({
   ...common,

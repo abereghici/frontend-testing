@@ -5,5 +5,9 @@ export const common = {
   sourcemap: true,
   entryPoints: ['src/index.tsx'],
   outfile: 'public/build/index.js',
-  plugins: [cssModulesPlugin()],
+  plugins: [
+    cssModulesPlugin({
+      v2: true,
+    }),
+  ],
 };
