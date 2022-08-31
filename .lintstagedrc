@@ -3,6 +3,7 @@
     "prettier --write"
   ],
   "*.+(js|jsx|ts|tsx|)": [
-    "eslint"
+    "eslint",
+    "jest --findRelatedTests"
   ]
 }
