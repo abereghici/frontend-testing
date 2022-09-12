@@ -1,5 +1,10 @@
-import {render as rtlRender, RenderOptions} from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import {
+  render as rtlRender,
+  RenderOptions,
+  waitFor,
+} from '@testing-library/react';
+import user from '@testing-library/user-event';
+import {axe} from 'jest-axe';
 
 function render(
   ui: React.ReactElement,
@@ -13,5 +18,6 @@ function render(
 }
 
 export * from '@testing-library/react';
+
 // override the built-in render with our own
-export {render, userEvent};
+export {render, user, axe, waitFor};

@@ -23,7 +23,7 @@
     "test:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand --watch",
     "lint": "eslint --ignore-path .gitignore --ext .js,.jsx,.ts,.tsx,.mjs .",
     "check-types": "tsc",
-    "prettier": "prettier --ignore-path .gitignore \"**/*.+(js|jsx|ts|tsx|json|css|html|md)\"",
+    "prettier": "prettier --ignore-path .gitignore \"**/*.+(js|jsx|mjs|ts|tsx|json|css|html|md|mdx)\"",
     "check-format": "npm run prettier -- --list-different",
     "format": "npm run prettier -- --write",
     "validate": "run-p check-types check-format lint build test:coverage",
