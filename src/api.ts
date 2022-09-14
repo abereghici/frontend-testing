@@ -1,6 +1,6 @@
 type Config = {
   token?: string;
-  data?: Record<string, string>;
+  data?: Record<string, unknown>;
   headers?: Headers;
 };
 
@@ -34,14 +34,14 @@ async function client(
   }
 }
 
-export const savePost = (postData: Record<string, string>) =>
+export const savePost = (postData: Record<string, unknown>) =>
   client(`post/${postData.id}`, {data: postData});
 
 export const loadGreeting = (subject: string) =>
   client(`greeting`, {data: {subject}});
 
-export const reportError = (data: Record<string, string>) =>
-  client(`error`, {data});
+export const reportError = (error: Error, info: React.ErrorInfo) =>
+  client(`error`, {data: {error, info}});
 
-export const submitForm = (data: Record<string, string>) =>
+export const submitForm = (data: Record<string, unknown>) =>
   client(`form`, {data});
