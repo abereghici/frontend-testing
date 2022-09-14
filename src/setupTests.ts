@@ -6,5 +6,5 @@ import 'jest-axe/extend-expect';
 global.React = React;
 
 // TODO: Remove this once https://github.com/nickcolley/jest-axe/issues/147 is fixed.
-const {getComputedStyle} = window;
-window.getComputedStyle = elt => getComputedStyle(elt);
+const {getComputedStyle} = global;
+global.getComputedStyle = elt => getComputedStyle?.(elt);

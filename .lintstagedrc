@@ -4,6 +4,6 @@
   ],
   "*.+(js|jsx|ts|tsx|)": [
     "eslint",
-    "jest --findRelatedTests"
+    "jest --findRelatedTests --passWithNoTests"
   ]
 }
