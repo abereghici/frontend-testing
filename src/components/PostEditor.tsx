@@ -15,6 +15,7 @@ interface FormElement extends HTMLFormElement {
 export function Editor({user}: {user: {id: string}}) {
   const [redirect, setRedirect] = React.useState(false);
   const [isSaving, setIsSaving] = React.useState(false);
+  const [error, setError] = React.useState(null);
 
   function handleSubmit(e: React.ChangeEvent<FormElement>) {
     e.preventDefault();
@@ -23,11 +24,18 @@ export function Editor({user}: {user: {id: string}}) {
       title: title.value,
       content: content.value,
       tags: tags.value.split(',').map(t => t.trim()),
+      date: new Date().toISOString(),
       authorId: user.id,
     };
 
     setIsSaving(true);
-    savePost(newPost).then(() => setRedirect(true));
+
+    savePost(newPost)
+      .then(() => setRedirect(true))
+      .catch(response => {
+        setIsSaving(false);
+        setError(response.data.error);
+      });
   }
 
   if (redirect) {
@@ -48,6 +56,7 @@ export function Editor({user}: {user: {id: string}}) {
       <button type="submit" disabled={isSaving}>
         Submit
       </button>
+      {error ? <div role="alert">{error}</div> : null}
     </form>
   );
 }
